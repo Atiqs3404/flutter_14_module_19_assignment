@@ -34,11 +34,11 @@ class _TodoState extends State<Todo> {
     TextEditingController titleController = TextEditingController();
     TextEditingController descriptionController = TextEditingController();
 
-    if (isUpdate && task != null) {
-      title ??= task["title"] as String?;
-      description ??= task["description"] as String?;
-      titleController.text = title!;
-      descriptionController.text = description!;
+    if (isUpdate) {
+      title = task!["title"] as String;
+      description = task["description"] as String;
+      titleController.text = title;
+      descriptionController.text = description;
     }
 
     showDialog(
